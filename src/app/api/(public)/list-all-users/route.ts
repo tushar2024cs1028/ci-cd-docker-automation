@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   const order = request.get("order") === "desc" ? "desc" : "asc";
   try {
     const allUsers = await prisma.user.findMany({
-      take: 10,
+      take: 2,
       ...(lastCursor &&
         !isNaN(Number(lastCursor)) && {
           cursor: {
